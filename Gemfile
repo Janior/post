@@ -41,6 +41,11 @@ gem 'gravatar-ultimate'
 
 gem 'annotate'
 
+#Inicio Gemas para los idiomas
+gem 'rails-i18n', '~> 5.1' # For 5.0.x, 5.1.x and 5.2.x
+
+#Fin Gemas para los idiomas
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

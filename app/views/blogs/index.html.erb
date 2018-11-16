@@ -1,35 +1,22 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-12">
-      <h1>Blogs</h1>
-      <table class="blogs">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Body</th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-
-        <tbody>
+    <div class="col-sm-10 col-sm-offset-1">
+      <div class="blogs">
           <% @blogs.each do |blog| %>
-            <tr>
-              <td><%= blog.title %></td>
-              <td><%= blog.body %></td>
-              
-              <td><%= link_to 'Show', blog %></td>
-              <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-              <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
+            <div class="blog clearfix">
+              <div class="blog-details">
+                 <span class="blog-title"><%= link_to blog.title , blog %></span>
+                 <span class="blog-description"><%= blog.body %></span>
 
-      <br>
-      
-        <%= link_to 'New Blog', new_blog_path %>
-      
-      
+                 
+                 <% if signed_in? %>
+                    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
+                    <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <% end %>
+              </div>
+          </div>
+          <% end %>
+      </div>
     </div>
   </div>
 </div>

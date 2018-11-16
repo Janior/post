@@ -11,6 +11,13 @@ module Post
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
+    #inicio definicion de idioma
+    config.i18n.default_locale = :es 
+    config.i18n.available_locales = ['es-CO', :de]
+    config.i18n.enforce_available_locales = true
+
+    #fin definicion de idioma
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

@@ -6,9 +6,8 @@
       
       <%= form_with(model: blog, local: true) do |form| %>
         <% if blog.errors.any? %>
-          <div id="error_explanation">
-            <h2><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</h2>
-
+          <div class="alert alert-danger" id="error_explanation">
+            <ul><%= pluralize(blog.errors.count, "error") %> prohibited this blog from being saved:</ul>
             <ul>
             <% blog.errors.full_messages.each do |message| %>
               <li><%= message %></li>
@@ -29,6 +28,10 @@
           <div>
             <%= form.submit form_title, class: "actions btn btn-prymary btn-lg btn-block" %>
           </div>
+          <div>
+            <%= link_to 'Back', blogs_path, class: "actions btn btn-prymary  btn-block"  %>
+          </div>
+
         <% end %>
 
 
