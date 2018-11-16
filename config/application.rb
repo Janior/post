@@ -12,9 +12,9 @@ module Post
     config.load_defaults 5.1
 
     #inicio definicion de idioma
-    config.i18n.default_locale = :es 
-    config.i18n.available_locales = ['es-CO', :de]
-    config.i18n.enforce_available_locales = true
+    #config.i18n.default_locale = :es 
+    #config.i18n.available_locales = ['es-CO', :de]
+    #config.i18n.enforce_available_locales = true
 
     #fin definicion de idioma
 
