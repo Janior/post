@@ -43,6 +43,9 @@ gem 'annotate'
 #Inicio Gemas para los idiomas
 gem 'rails-i18n', '~> 5.1' # For 5.0.x, 5.1.x and 5.2.x
 
+
+gem 'nokogiri', '1.8.5'
+
 #Fin Gemas para los idiomas
 
 # Use Capistrano for deployment
