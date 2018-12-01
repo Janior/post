@@ -1,22 +1,28 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-10 col-sm-offset-1">
-      <div class="blogs">
-          <% @blogs.each do |blog| %>
-            <div class="blog clearfix">
-              <div class="blog-details">
-                 <span class="blog-title"><%= link_to blog.title , blog %></span>
-                 <span class="blog-description"><%= blog.body %></span>
-
-                 
-                 <% if signed_in? %>
-                    <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-                    <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                <% end %>
-              </div>
-          </div>
-          <% end %>
-      </div>
-    </div>
-  </div>
-</div>
+<div class="container"> 
+    <div class="row"> 
+      <div class="col-sm-12 "> 
+        <div class="blogs"> 
+          <% @blogs.each do |p| %> 
+          <div class="blog clearfix"> 
+            <div class="blog-details"> 
+              <span class="blog-title"><%= link_to p.title, p %></span> 
+              <p class="unique"> Publicado: <%= p.updated_at.strftime("%Y-%m-%d") %></p> 
+              <p class="unique"> User: <%= p.user %></p>
+              <span class="blog-description"><%= p.body %></span> 
+              <% if signed_in? && p.user == current_user %> 
+                <div class="actions"> 
+                  <%= link_to "<span class='glyphicon glyphicon-pencil'></span>".html_safe, edit_blog_path(p) %> 
+                  <%= link_to "<span class='glyphicon glyphicon-trash'></span>".html_safe, p, method: :delete, data: { confirm: "¿Estás seguro de eliminar este producto?" } %> 
+                </div> 
+              <% end %> 
+              <div class="blog-comments"> 
+                  <span class="glyphicon glyphicon-comment"></span> 
+                  <span class="comment-count"><%= p.comments.count %></span> 
+              </div> 
+            </div> 
+          </div> 
+          <% end %> 
+        </div> 
+      </div> 
+    </div> 
+</div> 
