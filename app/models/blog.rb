@@ -14,6 +14,6 @@ class Blog < ApplicationRecord
      belongs_to :user
      has_many :comments
 
-     validates_presence_of :title, :description, :user
-     validates_length_of :description, minimum: 250
+     validates_presence_of :title, :body, :user
+     validates_length_of :body, minimum: 250
 end
